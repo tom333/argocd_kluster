@@ -1,0 +1,34 @@
+kind: Ingress
+apiVersion: networking.k8s.io/v1
+metadata:
+  name: whoami
+  namespace: whoami
+  annotations:
+    traefik.ingress.kubernetes.io/router.entrypoints: web
+    kubernetes.io/ingress.class: "traefik"
+    # cert-manager.io/cluster-issuer: self-signed-issuer
+    # traefik.ingress.kubernetes.io/router.tls: "true"
+
+spec:
+  rules:
+    - host: whoami.matrix
+      http:
+        paths:
+          - path: /bar
+            pathType: Prefix
+            backend:
+              service:
+                name: whoami
+                port:
+                  number: 80
+          - path: /foo
+            pathType: Prefix
+            backend:
+              service:
+                name: whoami
+                port:
+                  number: 80
+  # tls:
+  #   - hosts:
+  #     - whoami.matrix
+  #     secretName: whoami-tls

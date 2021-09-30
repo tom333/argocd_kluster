@@ -33,8 +33,13 @@ cert:
 
 
 argocd:
-	helm install argo-cd argocd/argocd-install --namespace argocd --create-namespace
+	# kubectl create namespace argocd
+	helm install argocd argocd/argocd-install  --namespace argocd --create-namespace
 	kubectl get pods -l app.kubernetes.io/name=argocd-server -n argocd -o name | cut -d'/' -f 2
+	kubectl -n argocd get secret argocd-initial-admin-secret -n argocd -o jsonpath="{.data.password}" | base64 -d
 
 delete-argocd:
 	helm uninstall argo-cd -n argocd
+
+demo:
+	./add_whoami_to_argocd.sh
