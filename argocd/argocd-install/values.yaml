@@ -42,7 +42,7 @@ argo-cd:
         syncPolicy:
           syncOptions:
           - CreateNamespace=true
-      - name: argocd-apps
+      - name: Application
         namespace: argocd
         destination:
           namespace: argocd
@@ -59,7 +59,7 @@ argo-cd:
           automated:
             selfHeal: true
             prune: true
-      - name: argocd-appprojects
+      - name: Projects
         namespace: argocd
         destination:
           namespace: argocd
