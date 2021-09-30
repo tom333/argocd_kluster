@@ -1,9 +1,9 @@
 argo-cd:
   namespace: argocd
   installCRDs: false
-  global:
-    image:
-      tag: v2.1.2
+  # global:
+  #   image:
+  #     tag: v2.1.2
   dex:
     enabled: false
   server:
@@ -64,9 +64,9 @@ argo-cd:
         destination:
           namespace: argocd
           server: https://kubernetes.default.svc
-        project: argocd/argocd
+        project: argocd
         source:
-          path: argocd-appprojects
+          path: argocd/argocd-appprojects
           repoURL: https://github.com/tom333/argocd_kluster.git
           targetRevision: HEAD
           directory:
