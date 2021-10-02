@@ -43,4 +43,8 @@ delete-argocd:
 
 demo:
 	kubectl create ns whoami
-	./add_whoami_to_argocd.sh
+	./scripts/add_whoami_to_argocd.sh
+
+
+voting:
+	./scripts/add_voting_to_argocd.sh
