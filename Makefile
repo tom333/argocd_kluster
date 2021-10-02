@@ -42,4 +42,5 @@ delete-argocd:
 	helm uninstall argo-cd -n argocd
 
 demo:
+	kubectl create ns whoami
 	./add_whoami_to_argocd.sh
