@@ -1,7 +1,7 @@
 kind: Ingress
 apiVersion: networking.k8s.io/v1
 metadata:
-  name: vote
+  name: result
   namespace: vote
   annotations:
     traefik.ingress.kubernetes.io/router.entrypoints: web
