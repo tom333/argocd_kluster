@@ -47,4 +47,4 @@ demo:
 
 
 voting:
-	./scripts/add_voting_to_argocd.sh
+	./scripts/add_vote_to_argocd.sh
