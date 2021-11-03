@@ -16,11 +16,7 @@ spec:
         app: private-repository-k8s
     spec:
       volumes:
-      # - name: certs-vol
-      #   hostPath:
-      #     path: /opt/certs
-      #     type: Directory
-      - name: registry-vol
+      - name: private-repository-k8s
         hostPath:
           path: /opt/registry
           type: Directory
@@ -36,5 +32,5 @@ spec:
           ports:
             - containerPort: 5000
           volumeMounts:
-          - name: registry-vol
+          - name: private-repository-k8s
             mountPath: /var/lib/registry
