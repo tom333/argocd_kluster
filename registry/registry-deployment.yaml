@@ -16,10 +16,10 @@ spec:
         app: private-repository-k8s
     spec:
       volumes:
-      - name: certs-vol
-        hostPath:
-          path: /opt/certs
-          type: Directory
+      # - name: certs-vol
+      #   hostPath:
+      #     path: /opt/certs
+      #     type: Directory
       - name: registry-vol
         hostPath:
           path: /opt/registry
