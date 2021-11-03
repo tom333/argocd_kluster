@@ -7,7 +7,7 @@ spec:
   destination:
     namespace: vote
     server: https://kubernetes.default.svc
-  project: registry-project
+  project: infra-project
   source:
     path: registry/
     repoURL: https://github.com/tom333/argocd_kluster.git
