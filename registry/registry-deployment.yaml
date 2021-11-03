@@ -17,9 +17,9 @@ spec:
     spec:
       volumes:
       - name: private-repository-k8s
-        hostPath:
-          path: /opt/registry
-          type: Directory
+      - name: volv
+        persistentVolumeClaim:
+          claimName: private-repository-k8s
       containers:
         - image: registry:2
           name: private-repository-k8s
@@ -32,5 +32,5 @@ spec:
           ports:
             - containerPort: 5000
           volumeMounts:
-          - name: private-repository-k8s
+          - name: volv
             mountPath: /var/lib/registry
