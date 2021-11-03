@@ -4,6 +4,7 @@ metadata:
   labels:
     app: private-repository-k8s
   name: private-repository-k8s
+  namespace: infra
 spec:
   ports:
   - port: 5000

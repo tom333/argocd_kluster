@@ -2,7 +2,7 @@ kind: Ingress
 apiVersion: networking.k8s.io/v1
 metadata:
   name: private-repository-k8s
-  namespace: private-repository-k8s
+  namespace: infra
   annotations:
     traefik.ingress.kubernetes.io/router.entrypoints: web
     kubernetes.io/ingress.class: "traefik"
