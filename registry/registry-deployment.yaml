@@ -36,7 +36,5 @@ spec:
           ports:
             - containerPort: 5000
           volumeMounts:
-          - name: certs-vol
-            mountPath: /certs
           - name: registry-vol
             mountPath: /var/lib/registry
