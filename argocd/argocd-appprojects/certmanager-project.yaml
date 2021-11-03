@@ -8,7 +8,7 @@ spec:
   - group: '*'
     kind: '*'
   destinations:
-  - namespace: argocd
+  - namespace: cert-manager
     server: https://kubernetes.default.svc
   orphanedResources:
     warn: false
