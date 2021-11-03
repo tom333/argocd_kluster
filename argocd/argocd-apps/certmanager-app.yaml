@@ -5,15 +5,15 @@ metadata:
   namespace: argocd
 spec:
   destination:
-    namespace: infra
+    namespace: cert-manager
     server: https://kubernetes.default.svc
-  project: infra-project
+  project: certmanager-project
   source:
     repoURL: 'https://github.com/argoproj/argoproj-deployments'
     path: cert-manager
   syncPolicy:
     syncOptions:
-    - CreateNamespace=true
+    - CreateNamespace=false
     automated:
       selfHeal: true
       prune: true
