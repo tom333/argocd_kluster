@@ -7,7 +7,7 @@ spec:
   destination:
     namespace: cert-manager
     server: https://kubernetes.default.svc
-  project: certmanager-project
+  project: infra-project
   source:
     repoURL: 'https://github.com/argoproj/argoproj-deployments'
     path: cert-manager
