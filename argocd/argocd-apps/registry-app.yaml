@@ -5,7 +5,7 @@ metadata:
   namespace: argocd
 spec:
   destination:
-    namespace: vote
+    namespace: infra
     server: https://kubernetes.default.svc
   project: infra-project
   source:
