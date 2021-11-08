@@ -9,11 +9,14 @@ spec:
     server: https://kubernetes.default.svc
   project: infra-project
   source:
-    repoURL: 'https://github.com/argoproj/argoproj-deployments'
-    path: cert-manager
+    helm:
+      releaseName: jetstack/cert-manager
+      parameters:
+        - name: installCRDs
+          value: true
   syncPolicy:
     syncOptions:
-    - CreateNamespace=false
+    - CreateNamespace=true
     automated:
       selfHeal: true
       prune: true
