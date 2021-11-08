@@ -1,21 +1,21 @@
-apiVersion: argoproj.io/v1alpha1
-kind: Application
-metadata:
-  name: sample-app
-  namespace: argocd
-spec:
-  destination:
-    namespace: whoami
-    server: https://kubernetes.default.svc
-  project: sample-project
-  source:
-    path: whoami/
-    repoURL: https://github.com/tom333/argocd_kluster.git
-    targetRevision: HEAD
-  syncPolicy:
-    syncOptions:
-    - CreateNamespace=true
-    automated:
-      selfHeal: true
-      prune: true
+# apiVersion: argoproj.io/v1alpha1
+# kind: Application
+# metadata:
+#   name: sample-app
+#   namespace: argocd
+# spec:
+#   destination:
+#     namespace: whoami
+#     server: https://kubernetes.default.svc
+#   project: sample-project
+#   source:
+#     path: whoami/
+#     repoURL: https://github.com/tom333/argocd_kluster.git
+#     targetRevision: HEAD
+#   syncPolicy:
+#     syncOptions:
+#     - CreateNamespace=true
+#     automated:
+#       selfHeal: true
+#       prune: true
 
