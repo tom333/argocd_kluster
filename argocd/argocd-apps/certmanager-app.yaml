@@ -10,7 +10,10 @@ spec:
   project: infra-project
   source:
     helm:
-      releaseName: jetstack/cert-manager
+      path: ''
+      repoURL: 'https://charts.jetstack.io'
+      # targetRevision: 1.6.1
+      chart: jetstack/cert-manager
       parameters:
         - name: installCRDs
           value: true
