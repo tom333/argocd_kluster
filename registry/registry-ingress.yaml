@@ -6,7 +6,12 @@ metadata:
   annotations:
     traefik.ingress.kubernetes.io/router.entrypoints: web
     kubernetes.io/ingress.class: "traefik"
+    cert-manager.io/cluster-issuer: "letsencrypt-prod"
 spec:
+  tls:
+  - hosts:
+    - registry.matrix
+    secretName: private-registry-key
   rules:
     - host: registry.matrix
       http:
