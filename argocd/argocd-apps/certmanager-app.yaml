@@ -11,11 +11,15 @@ spec:
   source:
     path: ''
     repoURL: 'https://charts.jetstack.io'
-    # targetRevision: 1.6.1
-    chart: jetstack/cert-manager
-    parameters:
-      - name: installCRDs
-        value: true
+    targetRevision: v1.6.1
+    chart: cert-manager
+    helm:
+      valueFiles:
+        - values.yaml
+      values: 'value1: "value"'
+      parameters:
+        - name: installCRDs
+          value: 'true'
   syncPolicy:
     syncOptions:
     - CreateNamespace=true
