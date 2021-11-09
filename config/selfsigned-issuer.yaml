@@ -24,6 +24,8 @@ spec:
     name: selfsigned-issuer
     kind: ClusterIssuer
     group: cert-manager.io
+  dnsNames:
+  - "*.matrix"
 ---
 apiVersion: cert-manager.io/v1
 kind: Issuer
