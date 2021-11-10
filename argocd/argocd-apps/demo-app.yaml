@@ -1,21 +1,28 @@
 apiVersion: argoproj.io/v1alpha1
-kind: Application
+kind: ApplicationSet
 metadata:
   name: demo-app
   namespace: argocd
 spec:
-  destination:
-    namespace: demo-flask
-    server: https://kubernetes.default.svc
-  project: demo-project
-  source:
-    path: k8s/
-    repoURL: https://github.com/tom333/demo_flask_k8s.git
-    targetRevision: HEAD
-  syncPolicy:
-    syncOptions:
-    - CreateNamespace=true
-    automated:
-      selfHeal: true
-      prune: true
-
+  generators:
+  - git:
+      repoURL: https://github.com/tom333/demo_flask_k8s.git
+      revision: main
+      directories:
+      - path: k8s/*
+  template:
+    metadata:
+      name: '{{path.basename}}'
+    spec:
+      project: default
+      syncPolicy:
+        automated:
+          prune: true
+          selfHeal: true
+      source:
+        repoURL: https://github.com/tom333/demo_flask_k8s.git
+        targetRevision: main
+        path: k8s/'{{path}}'
+      destination:
+        server: https://kubernetes.default.svc
+        namespace: demo-flask
