@@ -11,7 +11,7 @@ spec:
   source:
     path: ''
     repoURL: 'https://argoproj.github.io/argo-helm'
-    targetRevision: ''
+    targetRevision: '1.6.0'
     chart: argocd-applicationset
   project: argocd
   syncPolicy:
