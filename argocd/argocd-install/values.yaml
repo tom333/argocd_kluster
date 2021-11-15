@@ -1,9 +1,6 @@
 argo-cd:
   namespace: argocd
   installCRDs: false
-  # global:
-  #   image:
-  #     tag: v2.1.2
   dex:
     enabled: false
   server:
