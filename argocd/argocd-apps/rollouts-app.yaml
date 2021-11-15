@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: applicationset-app
+  name: argo-rollouts
   namespace: argocd
 spec:
   destination:
