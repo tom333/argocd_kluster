@@ -54,7 +54,7 @@ spec:
         app: theia-python
     spec:
       containers:
-      - image: theiaide/theia:next
+      - image: theiaide/theia-python:latest
         imagePullPolicy: Always
         name: theia-python
         ports:
