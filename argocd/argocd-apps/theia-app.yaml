@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: thiea-python
+  namespace: argocd
+spec:
+  destination:
+    namespace: infra
+    server: https://kubernetes.default.svc
+  project: infra-project
+  source:
+    path: theia/
+    repoURL: https://github.com/tom333/argocd_kluster.git
+    targetRevision: HEAD
+  syncPolicy:
+    syncOptions:
+    - CreateNamespace=false
+    automated:
+      selfHeal: true
+      prune: true
