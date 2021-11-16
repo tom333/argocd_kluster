@@ -14,7 +14,7 @@ spec:
     server: https://kubernetes.default.svc
   - namespace: kube-system
     server: https://kubernetes.default.svc
-  - namespace: theia
+  - namespace: code-server
     server: https://kubernetes.default.svc
   orphanedResources:
     warn: false

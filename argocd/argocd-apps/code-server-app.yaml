@@ -9,9 +9,13 @@ spec:
     server: https://kubernetes.default.svc
   project: infra-project
   source:
-    path: theia/
-    repoURL: https://github.com/tom333/argocd_kluster.git
-    targetRevision: HEAD
+    path: 'ci/helm-chart'
+    repoURL: 'https://github.com/cdr/code-server'
+    chart: code-server
+    helm:
+      valueFiles:
+        - values.yaml
+      values: 'ingress.enabled: true'
   syncPolicy:
     syncOptions:
     - CreateNamespace=false
