@@ -16,6 +16,8 @@ spec:
       parameters:
         - name: ingress.enabled
           value: 'true'
+        - name: ingress.hosts
+          value: 'code.matrix'
   syncPolicy:
     syncOptions:
     - CreateNamespace=false
