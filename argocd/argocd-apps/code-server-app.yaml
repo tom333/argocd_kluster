@@ -12,6 +12,10 @@ spec:
     path: 'ci/helm-chart'
     repoURL: 'https://github.com/cdr/code-server'
     targetRevision: 'HEAD'
+    helm:
+      parameters:
+        - name: ingress.enabled
+          value: 'true'
   syncPolicy:
     syncOptions:
     - CreateNamespace=false
