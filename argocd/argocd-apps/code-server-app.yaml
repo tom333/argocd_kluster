@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: thiea-python
+  name: code-server
   namespace: argocd
 spec:
   destination:
