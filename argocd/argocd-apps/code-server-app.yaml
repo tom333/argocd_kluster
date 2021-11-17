@@ -16,7 +16,7 @@ spec:
       parameters:
         - name: ingress.enabled
           value: 'true'
-        - name: ingress.hosts
+        - name: ingress.hosts.host
           value: 'code.matrix'
   syncPolicy:
     syncOptions:
