@@ -12,11 +12,6 @@ spec:
     path: 'ci/helm-chart'
     repoURL: 'https://github.com/cdr/code-server'
     targetRevision: '1.0.5'
-    chart: code-server
-    helm:
-      valueFiles:
-        - values.yaml
-      values: 'ingress.enabled: true'
   syncPolicy:
     syncOptions:
     - CreateNamespace=false
