@@ -1,0 +1,6 @@
+annotations:
+  kubernetes.io/ingress.class: nginx
+hosts:
+  - host: code.matrix
+    paths:
+      - /'

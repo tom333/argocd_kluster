@@ -18,6 +18,8 @@ spec:
           value: 'true'
         - name: ingress.hosts.host
           value: 'code.matrix'
+      valueFiles:
+        - code-server-values.yaml
   syncPolicy:
     syncOptions:
     - CreateNamespace=false
