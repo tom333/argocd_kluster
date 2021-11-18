@@ -10,7 +10,7 @@ spec:
   project: tt-rss-project
   source:
     path: ''
-    repoURL: 'https://charts.helm.sh/stable'
+    repoURL: 'https://truecharts.org/'
     targetRevision: '4.0.0'
     chart: tt-rss
     helm:
