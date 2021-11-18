@@ -16,10 +16,8 @@ spec:
       parameters:
         - name: ingress.enabled
           value: 'true'
-        - name: ingress.hosts.host
-          value: 'code.matrix'
       valueFiles:
-        - code-server-values.yaml
+        - https://raw.githubusercontent.com/tom333/argocd_kluster/main/argocd/argocd-apps/code-server-values.yaml
   syncPolicy:
     syncOptions:
     - CreateNamespace=false
