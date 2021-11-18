@@ -1,0 +1,27 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: tt-rss
+  namespace: argocd
+spec:
+  destination:
+    namespace: tt-rss
+    server: https://kubernetes.default.svc
+  project: tt-rss-project
+  source:
+    path: ''
+    repoURL: ''
+    targetRevision: '4.0.0'
+    chart: tt-rss
+    helm:
+      parameters:
+        - name: ingress.enabled
+          value: 'true'
+      valueFiles:
+        - https://raw.githubusercontent.com/tom333/argocd_kluster/main/argocd/argocd-apps/code-server-values.yaml
+  syncPolicy:
+    syncOptions:
+    - CreateNamespace=false
+    automated:
+      selfHeal: true
+      prune: true
