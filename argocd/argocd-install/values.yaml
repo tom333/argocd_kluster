@@ -10,6 +10,15 @@ argo-cd:
       enabled: true
       hosts:
         - argocd.matrix
+    # certificate:
+    #   enabled: true
+    #   domain: argocd.matrix
+    #   issuer:
+    #     kind: # ClusterIssuer
+    #     name: selfsigned-issuer
+    #   additionalHosts: []
+    #   secretName: argocd-server-tls
+
     config:
       repositories: |
         - type: helm
@@ -21,6 +30,9 @@ argo-cd:
         - type: helm
           name: jetstack
           url: https://charts.jetstack.io
+        - type: helm
+          name: truecharts
+          url: https://truecharts.org/
         - type: git
           name: repo-perso
           url: https://github.com/tom333/argocd_kluster.git
