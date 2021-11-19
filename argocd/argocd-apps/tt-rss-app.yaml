@@ -23,7 +23,7 @@ spec:
         - https://raw.githubusercontent.com/tom333/argocd_kluster/main/argocd/argocd-apps/tt-rss-values.yaml
   syncPolicy:
     syncOptions:
-    - CreateNamespace=false
+    - CreateNamespace=true
     automated:
       selfHeal: true
       prune: true
