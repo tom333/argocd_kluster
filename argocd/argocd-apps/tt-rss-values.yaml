@@ -14,3 +14,5 @@ ingress:
 persistence:
   config:
     enabled: true
+env:
+  TTRSS_SELF_URL_PATH: http://rss.matrix
