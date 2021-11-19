@@ -1,0 +1,16 @@
+ingress:
+  main:
+    # -- Enables or disables the ingress
+    enabled: true
+    hosts:
+      -  # -- Host address. Helm template can be passed.
+        host: rss.matrix
+        ## Configure the paths for the host
+        paths:
+          -  # -- Path.  Helm template can be passed.
+            path: /
+            # -- Ignored if not kubeVersion >= 1.14-0
+            pathType: Prefix
+persistence:
+  config:
+    enabled: true

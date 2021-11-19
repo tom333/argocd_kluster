@@ -10,15 +10,17 @@ spec:
   project: tt-rss-project
   source:
     path: ''
-    repoURL: 'https://truecharts.org/'
-    targetRevision: '4.0.0'
+    repoURL: 'https://k8s-at-home.com/charts/'
+    targetRevision: '4.2.0'
     chart: tt-rss
     helm:
       parameters:
-        - name: ingress.enabled
+        - name: ingress.main.enabled
+          value: 'true'
+        - name: postgresql.persistence.enabled
           value: 'true'
       valueFiles:
-        - https://raw.githubusercontent.com/tom333/argocd_kluster/main/argocd/argocd-apps/code-server-values.yaml
+        - https://raw.githubusercontent.com/tom333/argocd_kluster/main/argocd/argocd-apps/tt-rss-values.yaml
   syncPolicy:
     syncOptions:
     - CreateNamespace=false
