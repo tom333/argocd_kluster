@@ -47,7 +47,7 @@ argo-cd:
           helm:
             version: v3
             valueFiles:
-            - values.yaml
+            - https://raw.githubusercontent.com/tom333/argocd_kluster/main/argocd/argocd-install/values.yamlvalues.yaml
           path: argocd/argocd-install
           repoURL: https://github.com/tom333/argocd_kluster.git
           targetRevision: HEAD
