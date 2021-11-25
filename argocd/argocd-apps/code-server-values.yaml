@@ -3,6 +3,6 @@ ingress:
   annotations:
     kubernetes.io/ingress.class: nginx
   hosts:
-    - host: code.matrix
+    - host: code.k3d.localhost
       paths:
         - '/'

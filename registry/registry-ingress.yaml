@@ -10,10 +10,10 @@ metadata:
 spec:
   tls:
   - hosts:
-    - registry.matrix
+    - registry.k3d.localhost
     secretName: private-registry-key
   rules:
-    - host: registry.matrix
+    - host: registry.k3d.localhost
       http:
         paths:
           - path: /
