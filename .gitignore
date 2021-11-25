@@ -1,2 +1,3 @@
 cluster/*
 .vagrant
+k3s/local_registry_cache
