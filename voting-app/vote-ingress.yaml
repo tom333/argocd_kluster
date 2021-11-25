@@ -8,7 +8,7 @@ metadata:
     kubernetes.io/ingress.class: "traefik"
 spec:
   rules:
-    - host: vote.matrix
+    - host: vote.k3d.localhost
       http:
         paths:
           - path: /

@@ -4,7 +4,7 @@ ingress:
     enabled: true
     hosts:
       -  # -- Host address. Helm template can be passed.
-        host: rss.matrix
+        host: rss.k3d.localhost
         ## Configure the paths for the host
         paths:
           -  # -- Path.  Helm template can be passed.
@@ -15,4 +15,4 @@ persistence:
   config:
     enabled: true
 env:
-  TTRSS_SELF_URL_PATH: http://rss.matrix
+  TTRSS_SELF_URL_PATH: http://rss.k3d.localhost/

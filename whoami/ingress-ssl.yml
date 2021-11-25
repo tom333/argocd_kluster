@@ -5,7 +5,7 @@ metadata:
   namespace: whoami
 spec:
   rules:
-    - host: whoami.matrix
+    - host: whoami.k3d.localhost
       http:
         paths:
           - path: /
@@ -17,5 +17,5 @@ spec:
                   number: 80
   tls:
     - hosts:
-      - whoami.matrix
-      secretName: matrix-cert
+      - whoami.k3d.localhost
+      secretName: k3d.localhost-cert

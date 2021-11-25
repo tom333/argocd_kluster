@@ -9,10 +9,10 @@ argo-cd:
     ingress:
       enabled: true
       hosts:
-        - argocd.matrix
+        - argocd.k3d.localhost
     # certificate:
     #   enabled: true
-    #   domain: argocd.matrix
+    #   domain: argocd.k3d.localhost
     #   issuer:
     #     kind: # ClusterIssuer
     #     name: selfsigned-issuer
