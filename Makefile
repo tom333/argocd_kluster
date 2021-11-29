@@ -6,10 +6,14 @@ k9s:
 
 start:
 	echo "⏳ 🗄 starting K3S cluster"
+	docker run registry
+	k3d cluster start dev
+
+init:
 	docker run --rm -d --name registry -p 5000:5000 -v ${PWD}/k3s/local_registry_cache:/var/lib/registry -e REGISTRY_PROXY_REMOTEURL="https://registry-1.docker.io" registry:2
-	k3d cluster create dev --port 80:80@loadbalancer --port 443:443@loadbalancer --volume "${PWD}/k3s/registry.yaml:/etc/rancher/k3s/registries.yaml"
-	kubectl create namespace argocd
-	helm install argo-cd argocd/argocd-install/ --namespace argocd
+	k3d cluster create dev --port 80:80@loadbalancer --port 443:443@loadbalancer --volume "${PWD}/k3s/registry.yaml:/etc/rancher/k3s/registries.yaml" \
+		--servers 1 --agents 3 --k3s-arg "--disable=traefik@server:0" --wait
+	helm install argocd argocd/argocd-install/ --namespace argocd --create-namespace
 
 stop:
 	echo "⏳ 👋 stoping K3S cluster"
@@ -28,10 +32,7 @@ HOST=k3d.localhost
 CERT_NAME=k3d.localhost-cert
 
 argocd:
-	# kubectl create namespace argocd
 	helm install argocd argocd/argocd-install  --namespace argocd --create-namespace
-	# kubectl get pods -l app.kubernetes.io/name=argocd-server -n argocd -o name | cut -d'/' -f 2
-	kubectl -n argocd get secret argocd-initial-admin-secret -n argocd -o jsonpath="{.data.password}" | base64 -d
 
 delete-argocd:
 	helm uninstall argo-cd -n argocd
@@ -53,3 +54,4 @@ install:
 	k3d --version
 	docker --version
 	helm --version
+
