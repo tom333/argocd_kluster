@@ -1,12 +1,12 @@
 ingress:
   enabled: true
-  annotations:
-    kubernetes.io/ingress.class: traefik
   hosts:
     - host: code.k3d.localhost
       paths:
-        - '/'
-        - path:
+        - path: '/'
+          pathType: Prefix
           backend:
-            serviceName: code-server
-            servicePort: 8080
+            service:
+              name: code-server
+              port:
+               number: 8080
