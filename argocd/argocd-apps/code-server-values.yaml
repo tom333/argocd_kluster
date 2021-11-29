@@ -6,3 +6,7 @@ ingress:
     - host: code.k3d.localhost
       paths:
         - '/'
+        - path:
+          backend:
+            serviceName: code-server
+            servicePort: 8080
