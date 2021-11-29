@@ -4,21 +4,13 @@
 - `vagrant plugin install vagrant-vbguest`
 
 
-
-## Build and run VBox
-run `vagrant up`
-
-
-## DNSMASQ
-
-`sudo nano /etc/NetworkManager/NetworkManager.conf`
-ajout de `dns=dnsmasq` dans la section `[main]`
-
-sudo nano /etc/dnsmasq.d/kube.conf
-address=/k3d.localhost/42.42.42.42
-
-sudo systemctl restart NetworkManager
-sudo service dnsmasq restart
+## install
+```
+make install
+make start
+# récupération du mdp admin de argocd
+kubectl -n argocd get secret argocd-initial-admin-secret -n argocd -o jsonpath="{.data.password}" | base64 -d
+```
 
 
 ## Eclipse CHE
